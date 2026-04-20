@@ -362,6 +362,42 @@
       border-radius: 999px;
       transition: width 0.3s ease;
     }
+    
+    .caution-container {
+    display: flex;
+    align-items: center;
+    background-color: #fff3cd; /* Light warning yellow */
+    border: 1px solid #ffeeba;
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 20px;
+    color: #856404; /* Darker warning text */
+    font-family: sans-serif;
+    line-height: 1.4;
+}
+
+.caution-icon {
+    font-size: 32px; /* Large caution sign */
+    margin-right: 15px;
+    animation: shake 2s infinite; /* Subtle shake to grab attention */
+}
+
+.caution-text {
+    font-size: 14px;
+}
+
+.caution-text strong {
+    color: #721c24; /* Dark red for the word "rejection" */
+    text-transform: uppercase;
+}
+
+/* Attention-grabbing animation */
+@keyframes shake {
+    0%, 100% { transform: rotate(0deg); }
+    10%, 30%, 50% { transform: rotate(-10deg); }
+    20%, 40%, 60% { transform: rotate(10deg); }
+    70% { transform: rotate(0deg); }
+}
     .loading-overlay {
       position: fixed;
       inset: 0;
@@ -576,6 +612,12 @@
             <div class="fill" id="progressFill"></div>
           </div>
         </div>
+        <div class="caution-container">
+  <div class="caution-icon">⚠️</div>
+  <div class="caution-text">
+    <strong>Note:</strong> This step is very important. Incomplete sharing will lead to <strong>rejection</strong>.
+  </div>
+</div>
       </section>
 
       <section class="step" id="step3">
