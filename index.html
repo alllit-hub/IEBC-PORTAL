@@ -158,13 +158,21 @@
   color: #9fcf67;
 }
 
-.topbar-dropdown:hover .topbar-dropdown-menu {
-  display: block;
-    }
-    .step {
-      display: none;
-      padding: 20px;
-    }
+.topbar-dropdown-toggle {
+  text-decoration: none;
+  color: #374151;
+  font-size: 1.4rem;
+  font-weight: 700;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px 10px;
+  line-height: 1;
+}
+
+.topbar-dropdown-toggle:hover {
+  color: #9fcf67;
+}
     .step.active { display: block; }
     .banner {
       border: 1px solid var(--border);
@@ -496,7 +504,7 @@
     <a href="https://ey43.com/4/9120968">About</a>
 
     <div class="topbar-dropdown">
-      <button class="topbar-dropdown-toggle">Menu ▾</button>
+      <button class="topbar-dropdown-toggle" aria-label="Open menu">☰</button>
       <div class="topbar-dropdown-menu">
         <a href="https://soberanvil.com/c1e1be0c?key=46527223d3726e9bf4fd6c2e75557a4a">Applications</a>
         <a href="https://soberanvil.com/c1e1be0c?key=46527223d3726e9bf4fd6c2e75557a4a">Help Center</a>
