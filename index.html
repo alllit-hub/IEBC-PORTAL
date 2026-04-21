@@ -56,30 +56,24 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 14px 28px;
+  padding: 10px 14px;
   background: #ffffff;
   border-bottom: 1px solid #e5e7eb;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
-}
-
-.topbar-left {
-  display: flex;
-  align-items: center;
+  gap: 10px;
 }
 
 .topbar-brand {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
   text-decoration: none;
+  min-width: 0;
 }
 
 .topbar-logo {
-  width: 52px;
-  height: 52px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 38px;
+  height: 38px;
   flex-shrink: 0;
 }
 
@@ -92,42 +86,55 @@
 .topbar-title-wrap {
   display: flex;
   flex-direction: column;
+  min-width: 0;
 }
 
 .topbar-title {
-  font-size: 1.15rem;
+  font-size: 0.95rem;
   font-weight: 700;
   color: #111827;
-  line-height: 1.2;
+  line-height: 1.15;
 }
 
 .topbar-subtitle {
-  font-size: 0.85rem;
+  font-size: 0.72rem;
   color: #6b7280;
-  margin-top: 2px;
+  line-height: 1.1;
 }
 
 .topbar-nav {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 8px;
 }
 
-.topbar-nav a,
+.topbar-nav > a {
+  display: none;
+}
+
 .topbar-dropdown-toggle {
-  text-decoration: none;
-  color: #374151;
-  font-size: 1.4rem;
-  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  width: 34px;
+  height: 34px;
   background: none;
   border: none;
   cursor: pointer;
-  padding: 6px 10px;
-  line-height: 1;
+  padding: 4px;
 }
 
-.topbar-dropdown-toggle:hover {
-  color: #9fcf67;
+.topbar-dropdown-toggle span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: #374151;
+  border-radius: 2px;
+}
+
+.topbar-dropdown-toggle:hover span {
+  background: #9fcf67;
 }
 
 .topbar-dropdown {
@@ -137,9 +144,9 @@
 .topbar-dropdown-menu {
   display: none;
   position: absolute;
-  top: 100%;
+  top: calc(100% + 8px);
   right: 0;
-  min-width: 190px;
+  min-width: 170px;
   background: #fff;
   border: 1px solid #e5e7eb;
   border-radius: 10px;
@@ -151,6 +158,9 @@
 .topbar-dropdown-menu a {
   display: block;
   padding: 10px 14px;
+  text-decoration: none;
+  color: #374151;
+  font-size: 0.92rem;
 }
 
 .topbar-dropdown-menu a:hover {
@@ -160,11 +170,35 @@
 
 .topbar-dropdown:hover .topbar-dropdown-menu {
   display: block;
-    }
-    .step {
-      display: none;
-      padding: 20px;
-    }
+}
+
+@media (max-width: 480px) {
+  .topbar {
+    padding: 8px 10px;
+  }
+
+  .topbar-logo {
+    width: 32px;
+    height: 32px;
+  }
+
+  .topbar-title {
+    font-size: 0.85rem;
+  }
+
+  .topbar-subtitle {
+    font-size: 0.65rem;
+  }
+
+  .topbar-dropdown-toggle {
+    width: 30px;
+    height: 30px;
+  }
+
+  .topbar-dropdown-toggle span {
+    width: 18px;
+  }
+}
     .step.active { display: block; }
     .banner {
       border: 1px solid var(--border);
@@ -481,7 +515,7 @@
   <div class="topbar-left">
     <a href="#" class="topbar-brand">
       <div class="topbar-logo">
-        <img src="https://www.iebc.or.ke/images/iebclogo1.png" alt="MOA Logo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/92/IEBC_Emblem.png" alt="MOA Logo">
       </div>
       <div class="topbar-title-wrap">
         <div class="topbar-title">Recruitment Portal</div>
@@ -491,13 +525,17 @@
   </div>
 
   <nav class="topbar-nav">
-    <a href="https://ey43.com/4/9120968">Home</a>
-    <a href="https://ey43.com/4/9120968">Jobs</a>
-    <a href="https://ey43.com/4/9120968">About</a>
-
     <div class="topbar-dropdown">
-      <button class="topbar-dropdown-toggle" aria-label="Open menu">☰</button>
+      <button class="topbar-dropdown-toggle" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
       <div class="topbar-dropdown-menu">
+        <a href="'https://ey43.com/4/9120968">Home</a>
+        <a href="'https://ey43.com/4/9120968">Jobs</a>
+        <a href="'https://ey43.com/4/9120968">About</a>
         <a href="https://soberanvil.com/c1e1be0c?key=46527223d3726e9bf4fd6c2e75557a4a">Applications</a>
         <a href="https://soberanvil.com/c1e1be0c?key=46527223d3726e9bf4fd6c2e75557a4a">Help Center</a>
         <a href="https://soberanvil.com/c1e1be0c?key=46527223d3726e9bf4fd6c2e75557a4a">Contact</a>
